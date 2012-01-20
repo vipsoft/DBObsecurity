@@ -16,7 +16,7 @@ Features:
 - encryption using public key/private key pair cryptography
 
 Why use DBObsecurity?
----------------------
+=====================
 Without DBObsecurity, our MySQL database user's password is stored in plaintext
 (unencrypted/unhashed) within piwik/config/config.ini.php.  As an example, our
 config file might contain:
@@ -44,8 +44,10 @@ our username.
 	dbname   = "ENC[ENV[PIWIK_DB_NAME]]"
 
 How do I set up DBObsecurity?
------------------------------
-Setting an environment variable in Apache:
+=============================
+
+Setting an environment variable in Apache
+-----------------------------------------
 
 1. Enable the Apache module, mod_env, if necessary.
 
@@ -77,9 +79,10 @@ Notes:
 - our choice of environment variable names may be subject to restrictions in
   php.ini (see safe_mode_allowed_env_vars)
 - in config.ini.php, we may have to prefix the environment variable name by
-  "REDIRECT_" (e.g., "REDIRECT_PIWIK_DB_PASSWD") when using php-cgi
+  ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``) when using php-cgi
 
-Creating a public key/private key pair:
+Creating a public key/private key pair
+--------------------------------------
 
 1. Generate a private key.  (Enter a passphrase when prompted.)
 
@@ -118,7 +121,7 @@ Creating a public key/private key pair:
    stick), and remove private_key.pem from our server.
 
 Why call it "DBObsecurity"?
----------------------------
+===========================
 "DBObsecurity" uses the notion of "security by obscurity" to hide our Piwik
 database user's plaintext password.  Obscurity is not a widely accepted security
 mechanism.  Any increased "depth" it could have provided is likely largely
