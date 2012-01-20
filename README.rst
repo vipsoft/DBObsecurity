@@ -12,8 +12,8 @@ Requirements:
 
 Features:
 
-- load value from any named environment variable
-- encryption using public key/private key pair cryptography
+- load password from a named environment variable
+- password encryption using public key/private key pair cryptography
 
 Why use DBObsecurity?
 =====================
@@ -55,8 +55,9 @@ Setting an environment variable in Apache
 
 	a2enmod env
 
-2. In our Apache configuration (e.g., httpd.conf or a VirtualHost configuration),
-   set the environment variable with our password (e.g., "MyDatabasePassword").
+2. In our Apache configuration (e.g., ``httpd.conf``, VirtualHost, or
+   ``.htaccess``), set the environment variable with our password (e.g.,
+   "MyDatabasePassword").
 
 ::
 
@@ -74,10 +75,8 @@ Setting an environment variable in Apache
 
 Notes:
 
-- in a shared hosting environment, we can set the environment variable in a
-  ``.htaccess`` file
 - our choice of environment variable names may be subject to restrictions in
-  ``php.ini`` (see safe_mode_allowed_env_vars)
+  ``php.ini`` (see ``safe_mode_allowed_env_vars``)
 - in ``config.ini.php``, we may have to prefix the environment variable name by
   ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``) when using ``php-cgi``
 
@@ -117,8 +116,10 @@ Creating a public key/private key pair
 	password = "ENC[JgjvHn4r...N4B2lig=]"
 	dbname   = "piwik"
 
-5. Write down our passphrase, print out ``private_key.pem`` (or copy it to a USB
-   stick), and remove ``private_key.pem`` from our server.
+5. Remove ``private_key.pem`` from our server. (If we want to keep it, copy
+   it to a USB stick, and write down the passphrase.) We can always generate
+   a new public key/private key pair, and encrypt a new password (or re-encrypt
+   an existing one.)
 
 Why call it "DBObsecurity"?
 ===========================
