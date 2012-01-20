@@ -18,8 +18,8 @@ Features:
 Why use DBObsecurity?
 =====================
 Without DBObsecurity, our MySQL database user's password is stored in plaintext
-(unencrypted/unhashed) within piwik/config/config.ini.php.  As an example, our
-config file might contain:
+(unencrypted/unhashed) within ``piwik/config/config.ini.php``.  As an example,
+our config file might contain:
 
 ::
 
@@ -62,7 +62,7 @@ Setting an environment variable in Apache
 
 	SetEnv PIWIK_DB_PASSWORD MyDatabasePassword
 
-3. Update piwik/config/config.ini.php.
+3. Update ``piwik/config/config.ini.php``.
 
 ::
 
@@ -75,11 +75,11 @@ Setting an environment variable in Apache
 Notes:
 
 - in a shared hosting environment, we can set the environment variable in a
-  .htaccess file
+  ``.htaccess`` file
 - our choice of environment variable names may be subject to restrictions in
-  php.ini (see safe_mode_allowed_env_vars)
-- in config.ini.php, we may have to prefix the environment variable name by
-  ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``) when using php-cgi
+  ``php.ini`` (see safe_mode_allowed_env_vars)
+- in ``config.ini.php``, we may have to prefix the environment variable name by
+  ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``) when using ``php-cgi``
 
 Creating a public key/private key pair
 --------------------------------------
@@ -107,7 +107,7 @@ Creating a public key/private key pair
 
 	openssl rsautl -inkey private_key.pem -encrypt | openssl enc -a -A
 
-4. Update piwik/config/config.ini.php.
+4. Update ``piwik/config/config.ini.php``.
 
 ::
 
@@ -117,8 +117,8 @@ Creating a public key/private key pair
 	password = "ENC[JgjvHn4r...N4B2lig=]"
 	dbname   = "piwik"
 
-5. Write down our passphrase, print out private_key.pem (or copy it to a USB
-   stick), and remove private_key.pem from our server.
+5. Write down our passphrase, print out ``private_key.pem`` (or copy it to a USB
+   stick), and remove ``private_key.pem`` from our server.
 
 Why call it "DBObsecurity"?
 ===========================
