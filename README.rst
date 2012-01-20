@@ -2,8 +2,8 @@
 DBObsecurity
 ============
 
-**DBObsecurity** is a Piwik plugin to obscure our database user's password when
-stored in Piwik's config file.
+**DBObsecurity** is a `Piwik <http://piwik.org/>`_ plugin to obscure our
+database user's password when stored in Piwik's config file.
 
 Requirements:
 
@@ -78,7 +78,7 @@ Notes:
 - our choice of environment variable names may be subject to restrictions in
   ``php.ini`` (see ``safe_mode_allowed_env_vars``)
 - in ``config.ini.php``, we may have to prefix the environment variable name by
-  ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``) when using ``php-cgi``
+  ``REDIRECT_`` (e.g., ``REDIRECT_PIWIK_DB_PASSWD``), e.g., when using ``php-cgi``
 
 Creating a public key/private key pair
 --------------------------------------
