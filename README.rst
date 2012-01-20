@@ -119,7 +119,8 @@ Creating a public key/private key pair
 5. Remove ``private_key.pem`` from our server. (If we want to keep it, copy
    it to a USB stick, and write down the passphrase.) We can always generate
    a new public key/private key pair, and encrypt a new password (or re-encrypt
-   an existing one.)
+   an existing one.) In any event, don't use this public key/private key pair
+   for any other application.
 
 Why call it "DBObsecurity"?
 ===========================
