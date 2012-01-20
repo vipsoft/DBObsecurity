@@ -41,6 +41,7 @@ class Piwik_DBObsecurity extends Piwik_Plugin
 	{
 		return array(
 			'Reporting.getDatabaseConfig' => 'getDatabaseConfig',
+			'Tracker.getDatabaseConfig' => 'getDatabaseConfig',
 		);
 	}
 
